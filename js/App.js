@@ -1,14 +1,3 @@
-// OGÓLNA FUNKCJA
-function generateTemplate(name, data, basicElement) {
-    var template = document.getElementById(name).innerHTML;
-    var element = document.createElement(basicElement || 'div');
-
-    Mustache.parse(template);
-    element.innerHTML = Mustache.render(template, data);
-
-    return element;
-}
-
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
 var prefix = "https://cors-anywhere.herokuapp.com/";
 var myHeaders = {
@@ -37,4 +26,15 @@ function setupCards(col, cards) {
   var cardObj = new Card(card.id, card.name);
     col.addCard(cardObj);
   });
+}
+
+// OGÓLNA FUNKCJA
+function generateTemplate(name, data, basicElement) {
+    var template = document.getElementById(name).innerHTML;
+    var element = document.createElement(basicElement || 'div');
+
+    Mustache.parse(template);
+    element.innerHTML = Mustache.render(template, data);
+
+    return element;
 }
